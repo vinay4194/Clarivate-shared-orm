@@ -44,7 +44,7 @@ my-store-shared-orm/
 
 ```bash
 git clone https://github.com/vinay4194/mystore-shared-orm.git
-cd my-storeshared-orm
+cd mystore-shared-orm
 ```
 
 ### 2. Install Dependencies
@@ -59,19 +59,32 @@ npm install
 npm run build
 ```
 
-### 4. Create Tables and Seed Data
+---
 
-Run the migration command to:
+### 4. ⚠️ Important: Ensure Database Exists
 
--  Create `categories` and `products` tables
--  Insert default seed data (3 categories + 3 products)
+Before running the migration, make sure the PostgreSQL database named **`MyStore`** exists.
+
+You can create it manually using:
+
+```sql
+CREATE DATABASE "MyStore";
+```
+
+---
+
+### 5. Run Migration to Create Tables and Seed Data
 
 ```bash
 npm run migration:run
 ```
 
-✅ This command uses the `src/config/database.config.ts` configuration  
-✅ It will populate your PostgreSQL database with usable demo data automatically
+This will:
+
+-  Create the `categories` and `products` tables
+-  Insert 3 default categories and 3 sample products
+
+✅ This command uses the `src/config/database.config.ts` configuration
 
 ---
 
@@ -102,8 +115,8 @@ import { AppDataSource, Product, Category } from "my-store-shared-orm";
 
 -  Node.js ≥ 16.x
 -  TypeScript installed globally or locally
--  PostgreSQL database must be running
--  Database name must match your `database.config.ts` setup (e.g., `MyStore`)
+-  PostgreSQL installed and running
+-  A PostgreSQL database named `MyStore`
 
 ---
 

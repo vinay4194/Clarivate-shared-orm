@@ -37,7 +37,7 @@ This repository contains the shared ORM entities and database connection logic f
 ## Usage in Backend:
 
 ```typescript
-import { Product, Category, AppDataSource } from "my-store-shared-orm";
+import { Product, Category, AppDataSource } from "mystore-shared-orm";
 ```
 
 ## Prerequisites

@@ -1,20 +1,7 @@
 "use strict";
 // import { AppDataSource } from "./config/database.config";
-var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    var desc = Object.getOwnPropertyDescriptor(m, k);
-    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
-      desc = { enumerable: true, get: function() { return m[k]; } };
-    }
-    Object.defineProperty(o, k2, desc);
-}) : (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    o[k2] = m[k];
-}));
-var __exportStar = (this && this.__exportStar) || function(m, exports) {
-    for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);
-};
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.Category = exports.Product = exports.AppDataSource = void 0;
 // AppDataSource.initialize()
 // 	.then(() => {
 // 		console.log("Database connected successfully!");
@@ -22,6 +9,12 @@ Object.defineProperty(exports, "__esModule", { value: true });
 // 	.catch((error) => {
 // 		console.error("Error connecting to database", error);
 // 	});
-__exportStar(require("./entities/Product"), exports);
-__exportStar(require("./entities/Category"), exports);
-__exportStar(require("./config/database.config"), exports);
+// export * from "./entities/Product";
+// export * from "./entities/Category";
+// export * from "./config/database.config";
+var database_config_1 = require("./config/database.config");
+Object.defineProperty(exports, "AppDataSource", { enumerable: true, get: function () { return database_config_1.AppDataSource; } });
+var Product_1 = require("./entities/Product");
+Object.defineProperty(exports, "Product", { enumerable: true, get: function () { return Product_1.Product; } });
+var Category_1 = require("./entities/Category");
+Object.defineProperty(exports, "Category", { enumerable: true, get: function () { return Category_1.Category; } });
